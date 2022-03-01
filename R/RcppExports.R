@@ -2,34 +2,18 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 id_low_search <- function(V) {
-    .Call(`_LCPcore_id_low_search`, V)
+    .Call(`_LCP_id_low_search`, V)
 }
 
 q_low_compute <- function(id_low, Qcumsum) {
-    .Call(`_LCPcore_q_low_compute`, id_low, Qcumsum)
+    .Call(`_LCP_q_low_compute`, id_low, Qcumsum)
 }
 
 LCP_construction_path_distance <- function(V, id_low, q_low, qn, Hnew, HnewT) {
-    .Call(`_LCPcore_LCP_construction_path_distance`, V, id_low, q_low, qn, Hnew, HnewT)
+    .Call(`_LCP_LCP_construction_path_distance`, V, id_low, q_low, qn, Hnew, HnewT)
 }
 
 LCP_construction_distance_loop <- function(V, Qcumsum, H) {
-    .Call(`_LCPcore_LCP_construction_distance_loop`, V, Qcumsum, H)
-}
-
-rcpparma_hello_world <- function() {
-    .Call(`_LCPcore_rcpparma_hello_world`)
-}
-
-rcpparma_outerproduct <- function(x) {
-    .Call(`_LCPcore_rcpparma_outerproduct`, x)
-}
-
-rcpparma_innerproduct <- function(x) {
-    .Call(`_LCPcore_rcpparma_innerproduct`, x)
-}
-
-rcpparma_bothproducts <- function(x) {
-    .Call(`_LCPcore_rcpparma_bothproducts`, x)
+    .Call(`_LCP_LCP_construction_distance_loop`, V, Qcumsum, H)
 }
 

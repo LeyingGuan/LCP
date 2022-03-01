@@ -13,7 +13,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // id_low_search
 arma::vec id_low_search(arma::vec& V);
-RcppExport SEXP _LCPcore_id_low_search(SEXP VSEXP) {
+RcppExport SEXP _LCP_id_low_search(SEXP VSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -24,7 +24,7 @@ END_RCPP
 }
 // q_low_compute
 arma::vec q_low_compute(arma::vec& id_low, arma::mat& Qcumsum);
-RcppExport SEXP _LCPcore_q_low_compute(SEXP id_lowSEXP, SEXP QcumsumSEXP) {
+RcppExport SEXP _LCP_q_low_compute(SEXP id_lowSEXP, SEXP QcumsumSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -36,7 +36,7 @@ END_RCPP
 }
 // LCP_construction_path_distance
 List LCP_construction_path_distance(arma::vec& V, arma::vec& id_low, arma::vec& q_low, arma::vec& qn, arma::mat& Hnew, arma::mat& HnewT);
-RcppExport SEXP _LCPcore_LCP_construction_path_distance(SEXP VSEXP, SEXP id_lowSEXP, SEXP q_lowSEXP, SEXP qnSEXP, SEXP HnewSEXP, SEXP HnewTSEXP) {
+RcppExport SEXP _LCP_LCP_construction_path_distance(SEXP VSEXP, SEXP id_lowSEXP, SEXP q_lowSEXP, SEXP qnSEXP, SEXP HnewSEXP, SEXP HnewTSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -52,7 +52,7 @@ END_RCPP
 }
 // LCP_construction_distance_loop
 List LCP_construction_distance_loop(arma::vec& V, arma::mat& Qcumsum, arma::mat& H);
-RcppExport SEXP _LCPcore_LCP_construction_distance_loop(SEXP VSEXP, SEXP QcumsumSEXP, SEXP HSEXP) {
+RcppExport SEXP _LCP_LCP_construction_distance_loop(SEXP VSEXP, SEXP QcumsumSEXP, SEXP HSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -60,49 +60,6 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< arma::mat& >::type Qcumsum(QcumsumSEXP);
     Rcpp::traits::input_parameter< arma::mat& >::type H(HSEXP);
     rcpp_result_gen = Rcpp::wrap(LCP_construction_distance_loop(V, Qcumsum, H));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_hello_world
-arma::mat rcpparma_hello_world();
-RcppExport SEXP _LCPcore_rcpparma_hello_world() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpparma_hello_world());
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_outerproduct
-arma::mat rcpparma_outerproduct(const arma::colvec& x);
-RcppExport SEXP _LCPcore_rcpparma_outerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_outerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_innerproduct
-double rcpparma_innerproduct(const arma::colvec& x);
-RcppExport SEXP _LCPcore_rcpparma_innerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_innerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_bothproducts
-Rcpp::List rcpparma_bothproducts(const arma::colvec& x);
-RcppExport SEXP _LCPcore_rcpparma_bothproducts(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_bothproducts(x));
     return rcpp_result_gen;
 END_RCPP
 }

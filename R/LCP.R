@@ -3,7 +3,7 @@ LCP_alpha <- function(vs, alphas, alpha){
   if(is.null(dim(alphas))){
     idxes =which(alphas< alpha)
     l1 = length(idxes)
-    if(l1>0){L
+    if(l1>0){
       return(vs[idxes[l1]])
     }else{
       return(Inf)
@@ -201,13 +201,11 @@ LCP_construction_path = function(alpha, V,  id_low, q_low,  qn,  Hnew, HnewT,typ
 
 #'@import R6
 #'@import Rcpp
-#'@import torch
-#'@import torchvision
 #'@import XRPython
 #'@useDynLib LCPcpp, .registration=TRUE
 #'@export
 #'\examples{
-#' man/examples/example_intro.R
+#' man/examples/example1.R
 #'}
 LCPmodule <- R6Class(classname = "LCP",
                      list(
